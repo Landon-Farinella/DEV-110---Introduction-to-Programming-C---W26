@@ -15,6 +15,15 @@ public class Program
         // - Dream job
         // Hint: string variableName = Console.ReadLine();
 
+        Console.Write("Enter your full name: ");
+        string fullName = Console.ReadLine();
+        Console.Write("Enter your hometown (city, state): ");
+        string hometown = Console.ReadLine();
+        Console.Write("Enter your favorite color: ");
+        string favoriteColor = Console.ReadLine();
+        Console.Write("Enter your dream job: ");
+        string dreamJob = Console.ReadLine();
+
         // TODO: Collect ACADEMIC INFORMATION
         // - Major (string)
         // - GPA (double, 0.0-4.0)
@@ -23,10 +32,27 @@ public class Program
         // Hint: double gpa = double.Parse(Console.ReadLine());
         // Hint: bool isFullTime = answer.ToLower() == "yes";
 
+        Console.Write("Enter your major: ");
+        string major = Console.ReadLine();
+        Console.Write("Enter your GPA (0.0 - 4.0): ");
+        double gpa = double.Parse(Console.ReadLine());
+        Console.Write("Enter your graduation year: ");
+        int graduationYear = int.Parse(Console.ReadLine());
+        Console.Write("Are you a full-time student? (yes/no): ");
+        string fullTimeAnswer = Console.ReadLine();
+        bool isFullTime = fullTimeAnswer.ToLower() == "yes";
+
         // TODO: Collect ADDITIONAL DETAILS
         // - Age (int)
         // - Height in inches (double)
         // - Favorite number (int)
+
+        Console.Write("Enter your age: ");
+        int age = int.Parse(Console.ReadLine());
+        Console.Write("Enter your height in inches: ");
+        double heightInches = double.Parse(Console.ReadLine());
+        Console.Write("Enter your favorite number: ");
+        int favoriteNumber = int.Parse(Console.ReadLine());
 
         // TODO: CALCULATE derived information
         // - Birth year = 2026 - age
@@ -35,12 +61,44 @@ public class Program
         // - Is honor student? = gpa >= 3.5
         // - Age in months = age * 12
 
+        int birthYear = 2026 - age;
+        int yearsToGraduation = graduationYear - 2026;
+        int heightFeet = (int)(heightInches / 12);
+        double heightRemainingInches = heightInches % 12;
+        bool isHonorStudent = gpa >= 3.5;
+        int ageInMonths = age * 12;
+
         // TODO: DISPLAY formatted profile card
         // Use sections with headers:
         // - PERSONAL INFORMATION
         // - ACADEMIC DETAILS
         // - CALCULATED STATISTICS
         // Use proper alignment and formatting
+
+        Console.WriteLine("\n╔════════════════════════════════╗");
+        Console.WriteLine("║      PERSONAL INFORMATION      ║");
+        Console.WriteLine("╚════════════════════════════════╝");
+        Console.WriteLine($"Full Name:        {fullName}");
+        Console.WriteLine($"Hometown:         {hometown}");
+        Console.WriteLine($"Favorite Color:   {favoriteColor}");
+        Console.WriteLine($"Dream Job:       {dreamJob}");
+        Console.WriteLine("\n╔════════════════════════════════╗");
+        Console.WriteLine("║       ACADEMIC DETAILS         ║");
+        Console.WriteLine("╚════════════════════════════════╝");
+        Console.WriteLine($"Major:            {major}");
+        Console.WriteLine($"GPA:              {gpa:F2}");
+        Console.WriteLine($"Graduation Year:  {graduationYear}");
+        Console.WriteLine($"Full-Time Student:{isFullTime}");
+        Console.WriteLine("\n╔════════════════════════════════╗");
+        Console.WriteLine("║     CALCULATED STATISTICS      ║");
+        Console.WriteLine("╚════════════════════════════════╝");
+        Console.WriteLine($"Birth Year:           {birthYear}");
+        Console.WriteLine($"Years to Graduation:  {yearsToGraduation}");
+        Console.WriteLine($"Height:               {heightFeet} ft {heightRemainingInches:F1} in");
+        Console.WriteLine($"Honor Student:       {isHonorStudent}");
+        Console.WriteLine($"Age in Months:       {ageInMonths}");
+
+
         Console.WriteLine("\n═══════════════════════════════════════════");
         Console.WriteLine("Profile complete! Good luck with your studies!");
     }
