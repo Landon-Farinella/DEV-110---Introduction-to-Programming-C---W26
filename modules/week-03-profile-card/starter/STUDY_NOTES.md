@@ -177,4 +177,4 @@ Answer: makes things more understandable, precision and accuracy, etc.
 **What real-world system would you like to model next?**
 [Shopping cart, game character, recipe calculator, etc.]
 
-Answer: game character, or anything game related
+Answer: game character, or anything game related.
