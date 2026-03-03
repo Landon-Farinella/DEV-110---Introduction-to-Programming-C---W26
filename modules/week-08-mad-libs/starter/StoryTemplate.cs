@@ -33,8 +33,12 @@ public class StoryTemplate
     // - Call FormatStory to build the final story string
     // - Return the formatted story
     public string GenerateStory(string[] words)
-    {
-        throw new NotImplementedException();
+   public string GenerateStory(string[] words)
+{
+        if (words == null)
+            throw new ArgumentNullException(nameof(words));
+
+        return string.Format(TemplateText, words);
     }
 
     // TODO 2: Implement FormatStory method (private helper)
