@@ -34,7 +34,13 @@ public class StoryTemplate
     // - Return the formatted story
     public string GenerateStory(string[] words)
     {
-        throw new NotImplementedException();
+        if (words == null)
+            throw new ArgumentNullException(nameof(words));
+
+        if (words.Length != Prompts.Length)
+            throw new ArgumentException("The number of words does not match the number of prompts.");
+
+        return string.Format(TemplateText, words);
     }
 
     // TODO 2: Implement FormatStory method (private helper)
